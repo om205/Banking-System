@@ -14,5 +14,9 @@ Features:
 ->Deposit and Withdrawal of money done only after verifying if the user is logged in.
 ->Storing the data in a file so that the informaion is retained.
 
+Preview:
+
+![image](https://user-images.githubusercontent.com/79047753/178929997-cfd84423-e9ac-4c38-9b55-379cbcc5ce86.png)
+
 
 The application will be upgraded further. Please suggest improvements.
