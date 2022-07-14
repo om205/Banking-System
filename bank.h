@@ -12,7 +12,7 @@ class Bank
         string name;
         string psw;
         bool loggedIn;
-        float bal;
+        double bal;
         public:
         long accNum;
         Encdec* encryption;

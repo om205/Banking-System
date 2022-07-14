@@ -1,5 +1,11 @@
 #to quickly compile and run the code
-all: main.cpp bank.cpp secure.cpp
-	g++ -o bank_management_app main.cpp bank.cpp secure.cpp
+CC= g++
+all: object app
+app: main.o bank.o secure.o
+	$(CC) -o $@ $^
+object: main..o bank.o secure.o
+%.o: %.cpp
+	$(CC) -c $^
 clean:
-	rm bank_management_app
+	rm app Bank.data bank.o secure.o main.o
+#just type make in terminal to build and 'make clean' to remove all files generated

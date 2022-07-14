@@ -16,7 +16,8 @@ void loginToBank(string bankName,int setKey)
     cout<<"\n\t\t\t***Welcome to the Banking World***\n";
     cout<<"\t\t\t   ----------------------------\n";
     Bank SBI(bankName,setKey);
-    int choice,amt;
+    int choice;
+    long long amt;
     string temp;
     bool login;
     do

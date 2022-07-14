@@ -24,7 +24,7 @@ Bank::Account::Account(Bank* bank,long accNum,string name,string psw)
 void Bank::Account::balanceEnquiery()
 {
     if(this->loggedIn)
-    cout<<"\n\t\tCurrent Balance\t: "<<this->bal<<"\n";
+    cout<<"\n\t\tCurrent Balance\t: "<<fixed<<setprecision(2)<<this->bal<<"\n";
     else
     cout<<"\n\tPlease login first\n\n";
 }
@@ -116,7 +116,7 @@ bool Bank::login()
     string psw;
     cout<<"\n\t\tEnter your Account Number: ";
     cin>>acNo;
-    cout<<"\t\tEnter Password:            ";
+    cout<<"\t\tEnter Password           : ";
     cin>>psw;
     auto it=accounts.find(acNo);
     bool success=it->second.login(psw);
@@ -128,17 +128,13 @@ bool Bank::login()
 void Bank::openAccount()
 {
     string n,p;
-    cout << "\n\t\tEnter Name:   ";
+    cout << "\n\t\tEnter Name   : ";
     cin.ignore();
     getline(cin,n);
-    cout << "\t\tSet password: ";
+    cout << "\t\tSet password : ";
     cin >> p;
     Account acc(this,++this->no_of_acc_opened,n,p);
     accounts.insert({acc.accNum,acc});
-    // ofstream fout;
-    // fout.open("Bank.data",ios::app);
-    // fout<<acc;
-    // fout.close();
     this->updateStorage();
     cout<<"\n\tCongratulation! Account Successfully created.\n\n\tAccount Details:\n\n";
     cout<<acc;
