@@ -1,0 +1,6 @@
+.vscode
+Bank.data
+app.exe
+main.o
+bank.o
+secure.o
